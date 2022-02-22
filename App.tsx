@@ -4,7 +4,7 @@ import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
 
 import { SafeAreaView } from "react-native";
-// import { AddProblemForm } from "./components/add-problem-form";
+import { AddProblemForm } from "./components/add-problem-form";
 
 import { QueryClient, QueryClientProvider } from "react-query";
 
@@ -21,12 +21,11 @@ export default function App() {
       <ApplicationProvider {...eva} theme={eva.light}>
         <QueryClientProvider client={queryClient}>
           <SafeAreaView style={{ flex: 1 }}>
-            {/* {isAddMode ? (
-        <AddProblemForm showDisplayMode={() => setIsAddMode(false)} />
-      ) : (
-        
-      )} */}
-            <DisplayContent showInputMode={() => setIsAddMode(true)} />
+            {isAddMode ? (
+              <AddProblemForm showDisplayMode={() => setIsAddMode(false)} />
+            ) : (
+              <DisplayContent showInputMode={() => setIsAddMode(true)} />
+            )}
           </SafeAreaView>
         </QueryClientProvider>
       </ApplicationProvider>

@@ -53,15 +53,13 @@ export const DisplayContent = ({ showInputMode }: Props) => {
     );
   };
 
-  const BrushIcon = (props) => <Icon {...props} name="brush-outline" />;
-
   return (
     <Layout style={{ padding: 24, flex: 1 }}>
       <Text style={{ textAlign: "center", marginBottom: 20 }} category="h4">
         DEŠ Spray Wall Boulders
       </Text>
       {/* {renderSlider()} */}
-      <ScrollView style={{}}>
+      <ScrollView style={{}} showsVerticalScrollIndicator={false}>
         {data &&
           data.map((problem) => (
             <ProblemListItem key={problem.id} data={problem} />
@@ -69,7 +67,7 @@ export const DisplayContent = ({ showInputMode }: Props) => {
       </ScrollView>
       <Button
         status="danger"
-        accessoryLeft={BrushIcon}
+        accessoryLeft={(props) => <Icon {...props} name="brush-outline" />}
         onPress={() => showInputMode()}
         style={{
           width: 50,
